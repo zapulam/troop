@@ -1,6 +1,8 @@
 ![Swarm Logo](assets/logo.png)
 
-# Swarm (experimental, educational)
+# Swarm (Troop)
+
+*This repository is a branch of OpenAI's Swarm repo designed specifically to work with an AzureOpenAI client rather then an OpenAI client.*
 
 An educational framework exploring ergonomic, lightweight multi-agent orchestration.
 
