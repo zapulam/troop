@@ -179,13 +179,14 @@ class Swarm:
 
             yield {"delim": "start"}
             for chunk in completion:
-                delta = json.loads(chunk.choices[0].delta.json())
-                if delta["role"] == "assistant":
-                    delta["sender"] = active_agent.name
-                yield delta
-                delta.pop("role", None)
-                delta.pop("sender", None)
-                merge_chunk(message, delta)
+                if chunk.id:
+                    delta = json.loads(chunk.choices[0].delta.json())
+                    if delta["role"] == "assistant":
+                        delta["sender"] = active_agent.name
+                    yield delta
+                    delta.pop("role", None)
+                    delta.pop("sender", None)
+                    merge_chunk(message, delta)
             yield {"delim": "end"}
 
             message["tool_calls"] = list(
