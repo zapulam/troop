@@ -16,21 +16,23 @@ An educational framework exploring ergonomic, lightweight multi-agent orchestrat
 Requires Python 3.10+
 
 ```shell
-pip install git+ssh://git@github.com/openai/swarm.git
+pip install git+ssh://git@github.com:zapulam/troop.git
 ```
 
 or
 
 ```shell
-pip install git+https://github.com/openai/swarm.git
+pip install git+https://github.com/zapulam/troop.git
 ```
 
 ## Usage
 
 ```python
+from openai import AzureOpenAI
 from swarm import Swarm, Agent
 
-client = Swarm()
+azureClient = AzureOpenAI()
+client = Swarm(azureClient)
 
 def transfer_to_agent_b():
     return agent_b
@@ -90,29 +92,19 @@ Swarm explores patterns that are lightweight, scalable, and highly customizable 
 
 The Assistants API is a great option for developers looking for fully-hosted threads and built in memory management and retrieval. However, Swarm is an educational resource for developers curious to learn about multi-agent orchestration. Swarm runs (almost) entirely on the client and, much like the Chat Completions API, does not store state between calls.
 
-# Examples
-
-Check out `/examples` for inspiration! Learn more about each one in its README.
-
-- [`basic`](examples/basic): Simple examples of fundamentals like setup, function calling, handoffs, and context variables
-- [`triage_agent`](examples/triage_agent): Simple example of setting up a basic triage step to hand off to the right agent
-- [`weather_agent`](examples/weather_agent): Simple example of function calling
-- [`airline`](examples/airline): A multi-agent setup for handling different customer service requests in an airline context.
-- [`support_bot`](examples/support_bot): A customer service bot which includes a user interface agent and a help center agent with several tools
-- [`personal_shopper`](examples/personal_shopper): A personal shopping agent that can help with making sales and refunding orders
-
 # Documentation
 
 ![Swarm Diagram](assets/swarm_diagram.png)
 
 ## Running Swarm
 
-Start by instantiating a Swarm client (which internally just instantiates an `OpenAI` client).
+Start by instantiating a Swarm client via the AzureOpenAI client.
 
 ```python
 from swarm import Swarm
 
-client = Swarm()
+azureClient = AzureOpenAI()
+client = Swarm(azureClient)
 ```
 
 ### `client.run()`
@@ -348,14 +340,5 @@ Use the `run_demo_loop` to test out your swarm! This will run a REPL on your com
 ```python
 from swarm.repl import run_demo_loop
 ...
-run_demo_loop(agent, stream=True)
+run_demo_loop(azure_client, agent, stream=True)
 ```
-
-# Core Contributors
-
-- Ilan Bigio - [ibigio](https://github.com/ibigio)
-- James Hills - [jhills20](https://github.com/jhills20)
-- Shyamal Anadkat - [shyamal-anadkat](https://github.com/shyamal-anadkat)
-- Charu Jaiswal - [charuj](https://github.com/charuj)
-- Colin Jarvis - [colin-openai](https://github.com/colin-openai)
-- Katia Gil Guzman - [katia-openai](https://github.com/katia-openai)
