@@ -66,7 +66,6 @@ What can I assist?
 ## Table of Contents
 
 - [Overview](#overview)
-- [Examples](#examples)
 - [Documentation](#documentation)
   - [Running Swarm](#running-swarm)
   - [Agents](#agents)
