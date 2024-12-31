@@ -107,6 +107,14 @@ azureClient = AzureOpenAI()
 client = Swarm(azureClient)
 ```
 
+Or use the `run_demo_loop` to test out your swarm! This will run a REPL on your command line. Supports streaming.
+
+```python
+from swarm.repl import run_demo_loop
+...
+run_demo_loop(azure_client, agent, stream=True)
+```
+
 ### `client.run()`
 
 Swarm's `run()` function is analogous to the `chat.completions.create()` function in the Chat Completions API – it takes `messages` and returns `messages` and saves no state between calls. Importantly, however, it also handles Agent function execution, hand-offs, context variable references, and can take multiple turns before returning to the user.
@@ -332,13 +340,3 @@ Two new event types have been added:
 # Evaluations
 
 Evaluations are crucial to any project, and we encourage developers to bring their own eval suites to test the performance of their swarms. For reference, we have some examples for how to eval swarm in the `airline`, `weather_agent` and `triage_agent` quickstart examples. See the READMEs for more details.
-
-# Utils
-
-Use the `run_demo_loop` to test out your swarm! This will run a REPL on your command line. Supports streaming.
-
-```python
-from swarm.repl import run_demo_loop
-...
-run_demo_loop(azure_client, agent, stream=True)
-```
