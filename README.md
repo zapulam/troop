@@ -73,7 +73,6 @@ What can I assist?
   - [Functions](#functions)
   - [Streaming](#streaming)
 - [Evaluations](#evaluations)
-- [Utils](#utils)
 
 # Overview
 
