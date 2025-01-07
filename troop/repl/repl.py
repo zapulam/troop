@@ -1,6 +1,6 @@
 import json
 
-from swarm import Swarm
+from troop import Troop
 
 
 def process_and_print_streaming_response(response):
@@ -60,8 +60,8 @@ def pretty_print_messages(messages) -> None:
 def run_demo_loop(
     openai_client, starting_agent, context_variables=None, stream=False, debug=False
 ) -> None:
-    client = Swarm(openai_client)
-    print("Starting Swarm CLI 🐝")
+    client = Troop(openai_client)
+    print("Starting Troop CLI 🐝")
 
     messages = []
     agent = starting_agent

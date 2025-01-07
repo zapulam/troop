@@ -1,4 +1,4 @@
-from swarm.util import function_to_json
+from troop.util import function_to_json
 
 
 def test_basic_function():
