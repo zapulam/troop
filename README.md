@@ -1,4 +1,4 @@
-![Swarm Logo](assets/logo.png)
+![Troop Logo](assets/logo.png)
 
 # Swarm (Troop)
 
