@@ -1,6 +1,6 @@
 ![Troop Logo](assets/logo.png)
 
-# Swarm (Troop)
+# Troop (forked from OpenAI Swarm)
 
 *This repository is a branch of OpenAI's Troop repo designed specifically to work with an AzureOpenAI client rather then an OpenAI client.*
 
